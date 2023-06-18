@@ -73,42 +73,52 @@ while True:
         if selection == 1:
             student_number = input("Enter Student Number: ")
 
-        # TODO 10 make sure that Student number is not exists before
-        student_exists = any(student.student_number == student_number for student in students_list)
-        if student_exists:
-            print("Student Number already exists.")
-            continue
+            # TODO 10 make sure that Student number is not exists before
+            student_exists = any(student.student_number == student_number for student in students_list)
+            if student_exists:
+                print("Student Number already exists.")
+                continue
 
-        student_name = input("Enter Student Name: ")
-        while True:
-            try:
-                student_age = int(input("Enter Student Age: "))
-                break
-            except ValueError:
-                print("Invalid Value. Please enter a valid age.")
+            student_name = input("Enter Student Name: ")
+            while True:
+                try:
+                    student_age = int(input("Enter Student Age: "))
+                    break
+                except ValueError:
+                    print("Invalid Value. Please enter a valid age.")
 
-        # TODO 11 create student object and append it to students list
-        student = Student(student_name, student_age, student_number)
-        students_list.append(student)
+            # TODO 11 create student object and append it to students list
+            student = Student(student_name, student_age, student_number)
+            students_list.append(student)
 
-        print("Student Added Successfully")
+            print("Student Added Successfully")
 
-    elif selection == 2:
-        student_number = input("Enter Student Number")
-        # TODO 12 find the target student using loops and delete it if exist , if not print ("Student Not Exist")
+        elif selection == 2:
+            student_number = input("Enter Student Number")
+            # TODO 12 find the target student using loops and delete it if exist , if not print ("Student Not Exist")
+            found_student = None
+            for student in students_list:
+                if student.student_number == student_number:
+                    found_student = student
+                    break
 
-    elif selection == 3:
-        student_number = input("Enter Student Number")
-        # TODO 13 find the target student using loops and print student detials  if exist , if not print ("Student Not Exist")
+            if found_student:
+                students_list.remove(found_student)
+                print("Student Deleted Successfully")
+            else:
+                print("Student Not Found")
+        elif selection == 3:
+            student_number = input("Enter Student Number")
+            # TODO 13 find the target student using loops and print student detials  if exist , if not print ("Student Not Exist")
 
-    elif selection == 4:
-        student_number = input("Enter Student Number")
-        # TODO 14 find the target student using loops and get student average  if exist , if not print ("Student Not Exist")
+        elif selection == 4:
+            student_number = input("Enter Student Number")
+            # TODO 14 find the target student using loops and get student average  if exist , if not print ("Student Not Exist")
 
-    elif selection == 5:
-        student_number = input("Enter Student Number")
-        # TODO 15 ask user to enter course name and course mark then create coures object then append it to target student courses
+        elif selection == 5:
+            student_number = input("Enter Student Number")
+            # TODO 15 ask user to enter course name and course mark then create coures object then append it to target student courses
 
-    else:
-        # TODO 16 call a function to exit the program
-        pass
+        else:
+            # TODO 16 call a function to exit the program
+            pass
