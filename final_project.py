@@ -82,12 +82,14 @@ while True:
         student_name = input("Enter Student Name: ")
         while True:
             try:
-                student_age = int(input("Enter Student Age"))
+                student_age = int(input("Enter Student Age: "))
                 break
-            except:
-                print("Invalid Value")
+            except ValueError:
+                print("Invalid Value. Please enter a valid age.")
 
         # TODO 11 create student object and append it to students list
+        student = Student(student_name, student_age, student_number)
+        students_list.append(student)
 
         print("Student Added Successfully")
 
