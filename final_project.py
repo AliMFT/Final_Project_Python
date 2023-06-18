@@ -74,9 +74,12 @@ while True:
             student_number = input("Enter Student Number: ")
 
         # TODO 10 make sure that Student number is not exists before
-        student_number = input("Enter Student Number")
+        student_exists = any(student.student_number == student_number for student in students_list)
+        if student_exists:
+            print("Student Number already exists.")
+            continue
 
-        student_name = input("Enter Student Name")
+        student_name = input("Enter Student Name: ")
         while True:
             try:
                 student_age = int(input("Enter Student Age"))
