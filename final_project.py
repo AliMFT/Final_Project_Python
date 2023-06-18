@@ -1,8 +1,8 @@
 import uuid
 """ITF 07 Final Project Attendance System
 # TODO 1 Enter your name and submission date
-Name : 
-Delivery Date : 
+Name : Ali Mamdouh Totah
+Delivery Date : 18/6/2023
 """
 
 
