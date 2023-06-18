@@ -18,7 +18,7 @@ class Course:
 
 class Student:
     # TODO 3 define static variable indicates total student count
-
+    total_students = 0
     # TODO 4 define a constructor which includes
     # student_id (unique using uuid module)
     # student_name (user input)
@@ -43,7 +43,6 @@ class Student:
     def get_student_average(self):
         # TODO 7 return the student average
         pass
-
 
 # in Global Scope
 # TODO 8 declare empty students list
