@@ -40,7 +40,12 @@ class Student:
         self.courses_list.append(course)
     # method to get_student_details as dict
     def get_student_details(self):
-        return self.__dict__
+        details = self.__dict__.copy()
+        courses = []
+        for course in self.courses_list:
+            courses.append(course.course_name + ": " + str(course.course_mark))
+        details['courses_list'] = courses
+        return details
 
     # method to get_student_courses
     def get_student_courses(self):
@@ -98,7 +103,7 @@ while True:
             print("Student Added Successfully")
 
         elif selection == 2:
-            student_number = input("Enter Student Number")
+            student_number = input("Enter Student Number: ")
             # TODO 12 find the target student using loops and delete it if exist , if not print ("Student Not Exist")
             found_student = None
             for student in students_list:
@@ -112,7 +117,7 @@ while True:
             else:
                 print("Student Not Found")
         elif selection == 3:
-            student_number = input("Enter Student Number")
+            student_number = input("Enter Student Number: ")
             # TODO 13 find the target student using loops and print student detials  if exist , if not print ("Student Not Exist")
             found_student = None
             for student in students_list:
@@ -127,7 +132,7 @@ while True:
                 print("Student Not Found")
 
         elif selection == 4:
-            student_number = input("Enter Student Number")
+            student_number = input("Enter Student Number: ")
             # TODO 14 find the target student using loops and get student average  if exist , if not print ("Student Not Exist")
             found_student = None
             for student in students_list:
@@ -142,7 +147,7 @@ while True:
                 print("Student Not Found")
 
         elif selection == 5:
-            student_number = input("Enter Student Number")
+            student_number = input("Enter Student Number: ")
             # TODO 15 ask user to enter course name and course mark then create coures object then append it to target student courses
             found_student = None
             for student in students_list:
