@@ -1,4 +1,5 @@
 import uuid
+import sys
 """ITF 07 Final Project Attendance System
 # TODO 1 Enter your name and submission date
 Name : Ali Mamdouh Totah
@@ -59,6 +60,9 @@ class Student:
 # in Global Scope
 # TODO 8 declare empty students list
 students_list = []
+def exit_program():
+    print("Exiting the program...")
+    sys.exit(0)
 while True:
 
     # TODO 9 handle Exception for selection input
@@ -160,7 +164,11 @@ while True:
                 print("Course Added Successfully")
             else:
                 print("Student Not Found")
-
+        elif selection == 6:
+            break
         else:
             # TODO 16 call a function to exit the program
-            pass
+            print("Invalid selection. Please enter a valid option.")
+
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
