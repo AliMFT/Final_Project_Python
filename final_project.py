@@ -110,6 +110,17 @@ while True:
         elif selection == 3:
             student_number = input("Enter Student Number")
             # TODO 13 find the target student using loops and print student detials  if exist , if not print ("Student Not Exist")
+            found_student = None
+            for student in students_list:
+                if student.student_number == student_number:
+                    found_student = student
+                    break
+
+            if found_student:
+                print("Student Details:")
+                print(found_student.get_student_details())
+            else:
+                print("Student Not Found")
 
         elif selection == 4:
             student_number = input("Enter Student Number")
